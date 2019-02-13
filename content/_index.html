@@ -1,78 +1,28 @@
 ---
-title: "My First Post"
+title: "k3s - small but mighty"
 date: 2019-02-05T09:52:46-07:00
 draft: true
 ---
 
-<!-- <section>
-  <h1>Klipper</h1>
-  <p>Lightweight Kubernetes. Easy to install, half the memory, all in a binary less than 40mb.</p>
-
-  <h3>Great for</h3>
-  <ul>
-    <li>Edge</li>
-    <li>IoT</li>
-    <li>CI</li>
-    <li>ARM</li>
-    <li>Situations where a PhD in k8s clusterology is infeasible</li>
-  </ul>
-
-  <pre>
-    <code>
-      curl lorem ipsum
-      curl lorem ipsum
-      curl lorem ipsum
-    </code>
-  </pre>
-</section>
-
-<section>
-  <h2>Why Klipper</h2>
-
-  <div>
-    <h3>Benefit</h3>
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-  </div>
-  <div>
-    <h3>Benefit</h3>
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-  </div>
-  <div>
-    <h3>Benefit</h3>
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-  </div>
-  <div>
-    <h3>Benefit</h3>
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-  </div>
-</section>
-
-<section>
-  <h2>How Klipper Works</h2>
-  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-</section> -->
-
 <section class="intro">
-  <div class="half">
+  <div class="spacer">
     <h1>k3s: 5 less than k8s</h1>
     <h3>Lightweight Kubernetes. Easy to install, half the memory, all in a <span class="highlight">binary less than 40mb.</span></h3>
   </div>
 
   <div class="bg-light">
     <h4>This shouldn’t take long…</h4>
-    <pre>
-      <code>
-        curl lorem ipsum
-        curl lorem ipsum
-        curl lorem ipsum
-      </code>
-    </pre>
+    <pre><code>
+    Lorem ipsum dolor sit amet, consectetuer
+    Lorem ipsum dolor sit amet, consectetuer
+    Lorem ipsum dolor sit amet, consectetuer
+    </code></pre>
     <p>Lorem ipsum dolor sit amet, <a href="">consectetur adipiscing</a></p>
   </div>
 </section>
 
-<section class="bg-primary">
-  <div class="half">
+<section class="flex-row bg-primary">
+  <div class="half spacer">
     <h2>Great For</h2>
     <ul>
        <li>Edge</li>
@@ -82,22 +32,49 @@ draft: true
        <p><small>and Situations where a PhD in k8s clusterology is infeasible</small></p>
     </ul>        
   </div>
-  <div>
+  <div class="half">
     <img src="/img/threes.svg">
   </div>
 </section>
 
-<section>
+<section class="flex-row spacer">
+  <div>
+    <h2>Why use k3s?</h2>
+    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+  </div>
+  <div class="grid">
+    <div class="box">
+      <h4>Benefit here</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div class="box">
+      <h4>Benefit here</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div class="box">
+      <h4>Benefit here</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+  </div>
+</section>
+
+<section class="flex-row spacer">
   <div class="half">
     <h2>What is this?</h2>
     <h3>k3s is intended to be a fully compliant Kubernetes distribution with the following changes:</h3>
-    <div class="half">Legacy, alpha, non-default features are removed. Hopefully you shouldn’t notice the stuff that has been removed.</div>
-    <div class="half">Removed most in-tree plugins (cloud providers and storage plugins) which can be replaced with out of tree addons.</div>
-    <div class="half">Add sqlite3 as the default storage mechanism. etcd3 is still available, but not the default.</div>
-    <div class="half">Wrapped in simple launcher that handles a lot of the complexity of TLS and options.</div>       
+    <div class="flex-row">
+      <div class="half">
+        <p>Legacy, alpha, non-default features are removed. Hopefully you shouldn’t notice the stuff that has been removed.</p>
+        <p>Removed most in-tree plugins (cloud providers and storage plugins) which can be replaced with out of tree addons.</p>
+      </div>
+      <div class="half">
+        <p>Add sqlite3 as the default storage mechanism. etcd3 is still available, but not the default.</p>
+        <p>Wrapped in simple launcher that handles a lot of the complexity of TLS and options.</p>
+      </div>  
+    </div>    
   </div>
 
-  <div class="half">
+  <div class="half spacer">
     <h4>Minimal to no OS dependencies</h4>
     <p>(just a sane kernel and cgroup mounts needed). k3s packages required dependencies</p>
     <ul>
@@ -110,8 +87,8 @@ draft: true
   </div>
 </section>
 
-<section>
-  <div class="half bg-primary">
+<section class="flex-row">
+  <div class="half bg-primary spacer">
     <h2>Removes</h2>
     <ul>
        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
@@ -119,7 +96,7 @@ draft: true
        <li>Vestibulum auctor dapibus neque.</li>
     </ul>            
   </div>
-  <div class="half">
+  <div class="half spacer">
     <h2>Adds</h2>
     <ul>
        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
@@ -127,4 +104,28 @@ draft: true
        <li>Vestibulum auctor dapibus neque.</li>
     </ul>         
   </div>
+</section>
+
+<section class="spacer">
+  <h2>How it Works</h2>
+  <img src="/img/how-it-works.svg">
+</section>
+
+<section class="bg-light">
+  <h2>Start Quicklier</h2>
+  <ol>
+    <li>Download k3s from latest release, x86_64, armhf, and arm64 are supported</li>
+    <li>Run server</li>
+  </ol>
+  <pre>
+    <code>
+      sudo k3s server &
+      # Kubeconfig is written to /root/.kube/k3s.yaml
+      sudo k3s kubectl get node
+
+      # On a different node run the below. NODE_TOKEN comes from /var/lib/rancher/k3s/server/node-token 
+      # on your server
+      sudo k3s agent —server https://myserver:6443 —token ${NODE_TOKEN}
+    </code>
+  </pre>
 </section>

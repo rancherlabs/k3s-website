@@ -6,10 +6,9 @@ theme = "xmin"
 [menu]
 
   [[menu.main]]
-    identifier = "about"
-    name = "about hugo"
-    pre = "<i class='fa fa-heart'></i>"
-    url = "/about/"
+    identifier = "docs"
+    name = "docs"
+    url = "/docs/"
     weight = -110
 
   [[menu.main]]
