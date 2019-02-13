@@ -1,0 +1,34 @@
+{{ $home := .Site.Home }}
+<ul>
+  {{ template "section-tree-nav" (dict "page" $home "current" $ ) }}
+</ul>
+
+{{ define "section-tree-nav" }}
+  {{ $current := .current }}
+  {{ range .page.Sections}}
+  <li>
+    <a href="{{ .URL }}" class="parent is-section {{ if .InSection $current }}is-active{{ end }}">
+      <i class="fa {{ .Title | urlize }} fa-lg fa-fw"></i>
+      {{ .Title }}
+<!--       [{{ $current }}]
+ --><!--       {{ if .InSection $current }}[InSecCur]{{ end }}
+ -->    </a>
+    {{ if .InSection $current }}
+    <ul>
+      {{ range .Pages }}
+        <li>
+          <a href="{{ .RelPermalink }}" class="is-page">
+            <i class="fa {{ .Title | urlize }} fa-lg fa-fw"></i>
+            {{ .Title }}
+          </a>
+        </li>
+      {{ end }}
+      <!-- NOTE: When there are no children, this ends a harmless but excess ul tag: -->
+      <ul>
+        {{ template "section-tree-nav" (dict "page" . "current" $current ) }}
+      </ul>
+    </ul>
+    {{ end }}
+  </li>
+  {{ end }}
+{{ end }}

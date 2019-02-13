@@ -117,14 +117,14 @@ th, td {
 thead, tfoot, tr:nth-child(even) {
   background: #eee; }
 
-ul {
+ul.underlined {
   font-size: 20px;
   line-height: 24px;
   font-weight: lighter;
   letter-spacing: .5px;
   list-style-type: none;
   padding: 0; }
-  ul li {
+  ul.underlined li {
     border-bottom: #BFBFBF solid thin;
     padding: 10px 0; }
 

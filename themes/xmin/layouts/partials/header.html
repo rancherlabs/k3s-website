@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+
+    {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+  </head>
+
+  {{- $.Scratch.Set "topLevel" . -}}
+  {{ range $page := $.Site.Sections }}
+    {{- if $.CurrentSection -}}
+      {{- if $page.IsAncestor $.CurrentSection -}}
+        {{- $.Scratch.Set "topLevel" . -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  <body class="{{ replaceRE "/.*" "" ($.Scratch.Get "topLevel").Dir }}">
+    <nav class="main-nav">
+      <a href="/" class="logo">k3s.</a>
+    <ul class="menu">
+      {{ range .Site.Menus.main }}
+      <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+    </nav>

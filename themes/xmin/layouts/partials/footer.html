@@ -1,0 +1,10 @@
+  <footer>
+  <h2>footer</h2>
+  {{ partial "foot_custom.html" . }}
+  {{ with .Site.Params.footer }}
+  <hr/>
+  {{ . | markdownify }}
+  {{ end }}
+  </footer>
+  </body>
+</html>
