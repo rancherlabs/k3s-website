@@ -52,7 +52,7 @@ nav.main-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem; }
+  padding: .75rem 1.5rem; }
   nav.main-nav .logo {
     text-decoration: none;
     font-size: 2rem;
@@ -75,8 +75,7 @@ footer a {
   text-decoration: none; }
 
 hr {
-  border-style: dashed;
-  color: #ddd; }
+  border: 0.5px solid #edeff0; }
 
 /* code */
 pre {
@@ -165,6 +164,9 @@ ul.underlined {
 .spacer {
   padding: 4rem; }
 
+.text-center {
+  text-align: center; }
+
 .highlight {
   background-color: #FCFE00; }
 
@@ -206,13 +208,17 @@ ul.underlined {
   align-items: start;
   padding: 2rem;
   background-color: #edeff0; }
-  .docs .tree-nav ul li a {
-    font-size: 14px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #1F2326; }
-  .docs .tree-nav ul li ul {
-    margin-left: 10px; }
+  .docs .tree-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; }
+    .docs .tree-nav ul li a {
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #1F2326; }
+    .docs .tree-nav ul li ul {
+      margin-left: 10px; }
 .docs main {
   grid-area: content; }
 .docs aside {
@@ -232,6 +238,9 @@ ul.underlined {
 
   .half {
     flex-basis: 100%;
-    max-width: 100%; } }
+    max-width: 100%; }
+
+  .spacer {
+    padding: 2rem; } }
 
 /*# sourceMappingURL=main.css.map */
