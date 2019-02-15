@@ -22,10 +22,12 @@
 
   <body class="{{ replaceRE "/.*" "" ($.Scratch.Get "topLevel").Dir }}">
     <nav class="main-nav">
-      <a href="/" class="logo">k3s.</a>
+      <a href="/" class="logo"><img src="/img/logo.svg"></a>
     <ul class="menu">
       {{ range .Site.Menus.main }}
       <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
       {{ end }}
+      <li><a href="" class="btn"><img src="/img/icon-github.svg"><span>Github</span></a></li>
     </ul>
+
     </nav>

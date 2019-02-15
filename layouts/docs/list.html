@@ -13,11 +13,11 @@
     {{ end }}
 
     {{ .Content }}
+
+    {{ partial "footer.html" . }}
   </main>
 
   <aside>
-    side stuff er space?
+    {{.TableOfContents}}
   </aside>
-
-  {{ partial "footer.html" . }}
 </div>

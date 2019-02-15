@@ -1,34 +1,61 @@
-{{ $home := .Site.Home }}
-<ul>
-  {{ template "section-tree-nav" (dict "page" $home "current" $ ) }}
-</ul>
+{{$currentNode := .}}
+<nav>
+  <ul>
+  <li class="{{ if .IsHome }}active{{ end }}"><a href="{{ .Site.BaseURL }}">Home</a></li>
+  {{- if eq .Site.Params.ordersectionsby "title" -}}
+    {{- range .Site.Home.Sections.ByTitle -}}
+  {{template "menu" dict "sect" . "currentnode" $currentNode}}
+    {{- end -}}
+  {{- else -}}
+    {{- range .Site.Home.Sections.ByWeight -}}
+  {{template "menu" dict "sect" . "currentnode" $currentNode}}
+    {{- end -}}
+  {{- end}}
+  </ul>
+</nav>
 
-{{ define "section-tree-nav" }}
-  {{ $current := .current }}
-  {{ range .page.Sections}}
-  <li>
-    <a href="{{ .URL }}" class="parent is-section {{ if .InSection $current }}is-active{{ end }}">
-      <i class="fa {{ .Title | urlize }} fa-lg fa-fw"></i>
-      {{ .Title }}
-<!--       [{{ $current }}]
- --><!--       {{ if .InSection $current }}[InSecCur]{{ end }}
- -->    </a>
-    {{ if .InSection $current }}
-    <ul>
-      {{ range .Pages }}
-        <li>
-          <a href="{{ .RelPermalink }}" class="is-page">
-            <i class="fa {{ .Title | urlize }} fa-lg fa-fw"></i>
-            {{ .Title }}
-          </a>
-        </li>
-      {{ end }}
-      <!-- NOTE: When there are no children, this ends a harmless but excess ul tag: -->
-      <ul>
-        {{ template "section-tree-nav" (dict "page" . "current" $current ) }}
-      </ul>
-    </ul>
-    {{ end }}
-  </li>
-  {{ end }}
+{{define "menu"}}
+{{- $currentNode := .currentnode -}}
+{{ with .sect }}
+{{ if .IsSection }}
+{{ if in .Site.Params.menu_exclusion .Section }}
+{{- else -}}
+  {{- safeHTML .Params.head -}}
+<li class="{{ if .IsAncestor $currentNode }}parent{{ end }}{{ if eq .UniqueID $currentNode.UniqueID }} active{{ end }}{{ if .Params.alwaysopen }} parent{{ end }}">
+  <img src="/img/toggle-arrow.svg">
+  <a href="{{ .URL }}">{{ safeHTML .Params.Pre }}{{ .Title }}{{ safeHTML .Params.Post }}</a>
+  {{- $numberOfPages := (add (len .Pages) (len .Sections)) -}}
+  {{if ne $numberOfPages 0}}
+<ul class="{{ if .IsAncestor $currentNode }}sub-menu{{ end }}">
+    {{- .Scratch.Set "pages" .Pages -}}
+    {{- if .Sections -}}
+      {{- .Scratch.Set "pages" (.Pages | union .Sections) -}}
+    {{- end -}}
+    {{- $pages := (.Scratch.Get "pages") -}}
+    {{- if eq .Site.Params.ordersectionsby "title" -}}
+      {{- range $pages.ByTitle -}}
+        {{- if and .Params.hidden (not $.showhidden) -}}
+        {{- else -}}
+{{template "menu" dict "sect" . "currentnode" $currentNode}}
+        {{- end -}}
+      {{- end -}}
+    {{- else -}}
+      {{- range $pages.ByWeight -}}
+        {{- if and .Params.hidden (not $.showhidden) -}}
+        {{- else -}}
+{{template "menu" dict "sect" . "currentnode" $currentNode}}
+        {{- end -}}
+      {{- end -}}
+    {{- end}}
+</ul>
+  {{end}}
+</li>
+{{- end -}}
+{{- else -}}
+  {{- if not .Params.Hidden -}}
+<li class="{{ if eq .UniqueID $currentNode.UniqueID }}active{{ end }}"><a href="{{ .URL }}">{{ safeHTML .Params.Pre }}{{ .Title }}{{ safeHTML .Params.Post }}</a></li>
+  {{- end -}}
+{{ end -}}
+{{ end -}}
 {{ end }}
+

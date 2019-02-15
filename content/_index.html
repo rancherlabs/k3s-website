@@ -38,11 +38,11 @@ draft: true
 </section>
 
 <section class="flex-row spacer">
-  <div>
+  <div class="spacer text-center">
     <h2>Why use k3s?</h2>
     <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
   </div>
-  <div class="grid">
+  <div class="grid-row">
     <div class="box">
       <h4>Benefit here</h4>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -57,6 +57,8 @@ draft: true
     </div>
   </div>
 </section>
+
+<hr/>
 
 <section class="flex-row spacer">
   <div class="half">
@@ -74,7 +76,7 @@ draft: true
     </div>    
   </div>
 
-  <div class="half spacer">
+  <div class="half bg-light">
     <h4>Minimal to no OS dependencies</h4>
     <p>(just a sane kernel and cgroup mounts needed). k3s packages required dependencies</p>
     <ul class="underlined">
@@ -107,16 +109,20 @@ draft: true
 </section>
 
 <section class="spacer">
-  <h2>How it Works</h2>
+  <h2 class="text-center">How it Works</h2>
   <img src="/img/how-it-works.svg">
 </section>
 
 <section class="bg-light">
-  <h2>Start Quicklier</h2>
-  <ol>
-    <li>Download k3s from latest release, x86_64, armhf, and arm64 are supported</li>
-    <li>Run server</li>
-  </ol>
+  <div class="text-center">
+    <h2>Start Quicklier</h2>
+    <div>
+      <ol>
+        <li>Download k3s from latest release, x86_64, armhf, and arm64 are supported</li>
+        <li>Run server</li>
+      </ol>
+    </div>
+  </div>
   <pre>
     <code>
       sudo k3s server &
