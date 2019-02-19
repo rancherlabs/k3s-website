@@ -6,18 +6,17 @@ draft: true
 
 <section class="intro">
   <div class="spacer">
-    <h1>k3s: 5 less than k8s</h1>
-    <h3>Lightweight Kubernetes. Easy to install, half the memory, all in a <span class="highlight">binary less than 40mb.</span></h3>
+    <h1>k3s: Lightweight Kubernetes</h1>
+    <h3>Easy to install, half the memory, all in a <span class="highlight">binary less than 40mb.</span></h3>
   </div>
 
   <div class="bg-light">
     <h4>This shouldn’t take long…</h4>
     <pre><code>
-    Lorem ipsum dolor sit amet, consectetuer
-    Lorem ipsum dolor sit amet, consectetuer
-    Lorem ipsum dolor sit amet, consectetuer
+    curl -sfL https://get.k3s.io | sh -
+    kubectl get node
     </code></pre>
-    <p>Lorem ipsum dolor sit amet, <a href="">consectetur adipiscing</a></p>
+    <p>For detailed installation, <a href="/docs">refer to the docs</a></p>
   </div>
 </section>
 
@@ -27,7 +26,7 @@ draft: true
     <ul class="underlined">
        <li>Edge</li>
        <li>IoT</li>
-       <li>Ci</li>
+       <li>CI</li>
        <li>ARM</li>
        <p><small>and Situations where a PhD in k8s clusterology is infeasible</small></p>
     </ul>        
@@ -40,20 +39,19 @@ draft: true
 <section class="flex-row spacer">
   <div class="spacer text-center">
     <h2>Why use k3s?</h2>
-    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
   </div>
   <div class="grid-row">
     <div class="box">
-      <h4>Benefit here</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <h4>Optimized for ARM</h4>
+      <p>Both ARM64 and ARMv7 are supported with binaries and multiarch images available for both. k3s works great from something as small as a Raspberry Pi or as large as a AWS a1.4xlarge 32GiB server.</p>
     </div>
     <div class="box">
-      <h4>Benefit here</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <h4>Simplified Operations</h4>
+      <p>k3s is wrapped in a simple package that reduces the dependencies and steps needed to run a production Kubernetes cluster. Packaged as a single binary makes installation and upgrade as simple as copying a file. TLS certificates are automatically generated to ensure that all communication is secure by default.</p>
     </div>
     <div class="box">
-      <h4>Benefit here</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <h4>Perfect for Edge</h4>
+      <p>K3s is designed for production workloads in unattended, resource-constrained, remote locations or inside IoT appliances.</p>
     </div>
   </div>
 </section>
@@ -63,7 +61,7 @@ draft: true
 <section class="flex-row spacer">
   <div class="half">
     <h2>What is this?</h2>
-    <h3>k3s is intended to be a fully compliant Kubernetes distribution with the following changes:</h3>
+    <h3>k3s is a fully compliant production-grade Kubernetes distribution with the following changes:</h3>
     <div class="flex-row">
       <div class="half">
         <p>Legacy, alpha, non-default features are removed. Hopefully you shouldn’t notice the stuff that has been removed.</p>
@@ -77,14 +75,14 @@ draft: true
   </div>
 
   <div class="half bg-light">
-    <h4>Minimal to no OS dependencies</h4>
+    <h4>No OS dependencies</h4>
     <p>(just a sane kernel and cgroup mounts needed). k3s packages required dependencies</p>
     <ul class="underlined">
      <li>containerd</li>
      <li>Flannel</li>
      <li>CoreDNS</li>
-     <li>Aliquam tincidunt mauris eu risus.</li>
-     <li>Vestibulum auctor dapibus neque.</li>
+     <li>CNI</li>
+     <li>Host utilites (socat, iptables, etc)</li>
     </ul>
   </div>
 </section>
@@ -93,17 +91,19 @@ draft: true
   <div class="half bg-primary spacer">
     <h2>Removes</h2>
     <ul class="underlined">
-       <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-       <li>Aliquam tincidunt mauris eu risus.</li>
-       <li>Vestibulum auctor dapibus neque.</li>
+       <li>Legacy and non-default features</li>
+       <li>Alpha features</li>
+       <li>In-tree cloud providers</li>
+       <li>In-tree storage drivers</li>
     </ul>            
   </div>
   <div class="half spacer">
     <h2>Adds</h2>
     <ul class="underlined">
-       <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-       <li>Aliquam tincidunt mauris eu risus.</li>
-       <li>Vestibulum auctor dapibus neque.</li>
+       <li>Simplified installation</li>
+       <li>SQLite3 support instead of etcd</li>
+       <li>Automatic TLS management</li>
+       <li>Automatic Manifest and Helm Chart management</li>
     </ul>         
   </div>
 </section>
@@ -115,10 +115,10 @@ draft: true
 
 <section class="bg-light">
   <div class="text-center">
-    <h2>Start Quicklier</h2>
+    <h2>Quick Start</h2>
     <div>
       <ol>
-        <li>Download k3s from latest release, x86_64, armhf, and arm64 are supported</li>
+        <li>Download k3s from <a href="https://github.com/rancher/k3s/releases/latest">latest release</a>, x86_64, ARMv7, and ARM64 are supported</li>
         <li>Run server</li>
       </ol>
     </div>
@@ -126,7 +126,7 @@ draft: true
   <pre>
     <code>
       sudo k3s server &
-      # Kubeconfig is written to /root/.kube/k3s.yaml
+      # Kubeconfig is written to /etc/rancher/k3s/k3s.yaml
       sudo k3s kubectl get node
 
       # On a different node run the below. NODE_TOKEN comes from /var/lib/rancher/k3s/server/node-token 
