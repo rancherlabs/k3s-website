@@ -54,10 +54,8 @@ nav.main-nav {
   justify-content: space-between;
   padding: .75rem 1.5rem; }
   nav.main-nav .logo {
-    text-decoration: none;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #1F2326; }
+    height: 50px;
+    width: 50px; }
   nav.main-nav .menu {
     text-align: center; }
     nav.main-nav .menu a {
