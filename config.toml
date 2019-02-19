@@ -7,13 +7,6 @@ theme = "xmin"
 
   [[menu.main]]
     identifier = "docs"
-    name = "docs"
+    name = "Docs"
     url = "/docs/"
     weight = -110
-
-  [[menu.main]]
-    name = "getting started"
-    post = "<span class='alert'>New!</span>"
-    pre = "<i class='fa fa-road'></i>"
-    url = "/getting-started/"
-    weight = -100
