@@ -178,18 +178,38 @@ section {
 .highlight {
   background-color: #FCFE00; }
 
-.bg-primary {
-  background: #1F2326; }
-  .bg-primary * {
-    color: white; }
-
 .bg-light {
   background-color: #edeff0;
   padding: 40px; }
 
+.bg-primary {
+  background-color: #1F2326; }
+  .bg-primary * {
+    color: #fdfdfd; }
+
 .box {
   border: solid thin #edeff0;
   padding: 2rem; }
+
+.black-white {
+  clear: both;
+  display: grid;
+  grid-template-columns: [left] 1fr [right] 1fr; }
+
+.black {
+  background: #1F2326;
+  grid-area: "left"; }
+  .black .black-content {
+    margin: 0 0 0 auto; }
+    .black .black-content * {
+      color: #fdfdfd; }
+
+.white {
+  grid-area: "right"; }
+
+.black-content, .white-content {
+  max-width: calc(600px - 4em);
+  padding: 2em; }
 
 .docs h1 {
   font-size: 90px;
@@ -228,16 +248,24 @@ section {
     .docs .tree-nav ul li ul {
       margin-left: 10px; }
 .docs main {
-  grid-area: content; }
+  grid-area: content;
+  margin-top: 2rem; }
 .docs aside {
-  grid-area: side; }
+  grid-area: side;
+  margin-top: 2rem; }
 .docs footer {
   grid-area: footer; }
+.docs #TableOfContents > ul {
+  padding: 0;
+  margin: 0; }
+.docs #TableOfContents ul {
+  list-style-type: none; }
+  .docs #TableOfContents ul li a {
+    text-decoration: none;
+    padding: .25rem 0;
+    display: block; }
 
 @media (max-width: 768px) {
-  body {
-    background: tomato; }
-
   .container {
     grid-template-areas: "header" "nav" "content" "side" "footer";
     grid-template-columns: 1fr;
@@ -249,6 +277,14 @@ section {
     max-width: 100%; }
 
   .spacer {
-    padding: 2rem; } }
+    padding: 2rem; }
+
+  .black-content, .white-content {
+    max-width: 100%; }
+
+  .intro,
+  .grid-row,
+  .black-white {
+    grid-template-columns: 1fr; } }
 
 /*# sourceMappingURL=main.css.map */

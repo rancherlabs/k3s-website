@@ -22,9 +22,9 @@ draft: true
 </div>
 </section>
 
-<section class="bg-primary">
-  <div class="flex-row wrap">
-    <div class="half">
+<section class="black-white">
+  <div class="black">
+    <div class="black-content">
       <h2>Great For</h2>
       <ul class="underlined">
          <li>Edge</li>
@@ -32,11 +32,11 @@ draft: true
          <li>CI</li>
          <li>ARM</li>
          <p><small>and Situations where a PhD in k8s clusterology is infeasible</small></p>
-      </ul>        
-    </div>
-    <div class="half">
-      <img src="/img/threes.svg">
-    </div>
+      </ul>
+    </div>           
+  </div>
+  <div class="white">
+    <img src="/img/threes.svg">        
   </div>
 </section>
 
@@ -62,8 +62,6 @@ draft: true
 </div>
 </section>
 
-<hr/>
-
 <section>
   <div class="flex-row  wrap">
   <div class="half">
@@ -75,41 +73,45 @@ draft: true
       <p>Wrapped in simple launcher that handles a lot of the complexity of TLS and options.</p>   
   </div>
 
-  <div class="half box">
-    <h4>No OS dependencies</h4>
-    <p>(just a sane kernel and cgroup mounts needed). k3s packages required dependencies</p>
-    <ul class="underlined">
-     <li>containerd</li>
-     <li>Flannel</li>
-     <li>CoreDNS</li>
-     <li>CNI</li>
-     <li>Host utilites (socat, iptables, etc)</li>
-    </ul>
+  <div class="half">
+    <div class="box">
+      <h4>No OS dependencies</h4>
+      <p>(just a sane kernel and cgroup mounts needed). k3s packages required dependencies</p>
+      <ul class="underlined">
+       <li>containerd</li>
+       <li>Flannel</li>
+       <li>CoreDNS</li>
+       <li>CNI</li>
+       <li>Host utilites (socat, iptables, etc)</li>
+      </ul>
+    </div>
   </div>
 </div>
 </section>
 
-<section>
-  <div class="flex-row">
-  <div class="half bg-primary">
+<section class="black-white">
+  <div class="black">
+    <div class="black-content">
     <h2>Removes</h2>
     <ul class="underlined">
        <li>Legacy and non-default features</li>
        <li>Alpha features</li>
        <li>In-tree cloud providers</li>
        <li>In-tree storage drivers</li>
-    </ul>            
+    </ul> 
+    </div>           
   </div>
-  <div class="half">
+  <div class="white">
+    <div class="white-content">
     <h2>Adds</h2>
     <ul class="underlined">
        <li>Simplified installation</li>
        <li>SQLite3 support instead of etcd</li>
        <li>Automatic TLS management</li>
        <li>Automatic Manifest and Helm Chart management</li>
-    </ul>         
+    </ul> 
+    </div>        
   </div>
-</div>
 </section>
 
 <section>
