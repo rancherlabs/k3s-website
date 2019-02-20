@@ -4,8 +4,9 @@ date: 2019-02-05T09:52:46-07:00
 draft: true
 ---
 
-<section class="intro">
-  <div class="spacer">
+<section>
+  <div class="wrap intro">
+  <div>
     <h1>k3s: Lightweight Kubernetes</h1>
     <h3>Easy to install, half the memory, all in a <span class="highlight">binary less than 40mb.</span></h3>
   </div>
@@ -18,26 +19,30 @@ draft: true
     </code></pre>
     <p>For detailed installation, <a href="/docs">refer to the docs</a></p>
   </div>
+</div>
 </section>
 
-<section class="flex-row bg-primary">
-  <div class="half spacer">
-    <h2>Great For</h2>
-    <ul class="underlined">
-       <li>Edge</li>
-       <li>IoT</li>
-       <li>CI</li>
-       <li>ARM</li>
-       <p><small>and Situations where a PhD in k8s clusterology is infeasible</small></p>
-    </ul>        
-  </div>
-  <div class="half">
-    <img src="/img/threes.svg">
+<section class="bg-primary">
+  <div class="flex-row wrap">
+    <div class="half">
+      <h2>Great For</h2>
+      <ul class="underlined">
+         <li>Edge</li>
+         <li>IoT</li>
+         <li>CI</li>
+         <li>ARM</li>
+         <p><small>and Situations where a PhD in k8s clusterology is infeasible</small></p>
+      </ul>        
+    </div>
+    <div class="half">
+      <img src="/img/threes.svg">
+    </div>
   </div>
 </section>
 
-<section class="flex-row spacer">
-  <div class="spacer text-center">
+<section class="flex-row">
+  <div class="wrap">
+  <div class="text-center">
     <h2>Why use k3s?</h2>
   </div>
   <div class="grid-row">
@@ -54,27 +59,23 @@ draft: true
       <p>K3s is designed for production workloads in unattended, resource-constrained, remote locations or inside IoT appliances.</p>
     </div>
   </div>
+</div>
 </section>
 
 <hr/>
 
-<section class="flex-row spacer">
+<section>
+  <div class="flex-row  wrap">
   <div class="half">
     <h2>What is this?</h2>
     <h3>k3s is a fully compliant production-grade Kubernetes distribution with the following changes:</h3>
-    <div class="flex-row">
-      <div class="half">
-        <p>Legacy, alpha, non-default features are removed. Hopefully you shouldn’t notice the stuff that has been removed.</p>
-        <p>Removed most in-tree plugins (cloud providers and storage plugins) which can be replaced with out of tree addons.</p>
-      </div>
-      <div class="half">
-        <p>Add sqlite3 as the default storage mechanism. etcd3 is still available, but not the default.</p>
-        <p>Wrapped in simple launcher that handles a lot of the complexity of TLS and options.</p>
-      </div>  
-    </div>    
+      <p>Legacy, alpha, non-default features are removed. Hopefully you shouldn’t notice the stuff that has been removed.</p>
+      <p>Removed most in-tree plugins (cloud providers and storage plugins) which can be replaced with out of tree addons.</p>
+      <p>Add sqlite3 as the default storage mechanism. etcd3 is still available, but not the default.</p>
+      <p>Wrapped in simple launcher that handles a lot of the complexity of TLS and options.</p>   
   </div>
 
-  <div class="half bg-light">
+  <div class="half box">
     <h4>No OS dependencies</h4>
     <p>(just a sane kernel and cgroup mounts needed). k3s packages required dependencies</p>
     <ul class="underlined">
@@ -85,10 +86,12 @@ draft: true
      <li>Host utilites (socat, iptables, etc)</li>
     </ul>
   </div>
+</div>
 </section>
 
-<section class="flex-row">
-  <div class="half bg-primary spacer">
+<section>
+  <div class="flex-row">
+  <div class="half bg-primary">
     <h2>Removes</h2>
     <ul class="underlined">
        <li>Legacy and non-default features</li>
@@ -97,7 +100,7 @@ draft: true
        <li>In-tree storage drivers</li>
     </ul>            
   </div>
-  <div class="half spacer">
+  <div class="half">
     <h2>Adds</h2>
     <ul class="underlined">
        <li>Simplified installation</li>
@@ -106,32 +109,37 @@ draft: true
        <li>Automatic Manifest and Helm Chart management</li>
     </ul>         
   </div>
+</div>
 </section>
 
-<section class="spacer">
+<section>
+  <div class="wrap">
   <h2 class="text-center">How it Works</h2>
   <img src="/img/how-it-works.svg">
+</div>
 </section>
 
 <section class="bg-light">
-  <div class="text-center">
-    <h2>Quick Start</h2>
-    <div>
-      <ol>
-        <li>Download k3s from <a href="https://github.com/rancher/k3s/releases/latest">latest release</a>, x86_64, ARMv7, and ARM64 are supported</li>
-        <li>Run server</li>
-      </ol>
+  <div class="wrap">
+    <div class="text-center">
+      <h2>Quick Start</h2>
+      <div>
+        <ol>
+          <li>Download k3s from <a href="https://github.com/rancher/k3s/releases/latest">latest release</a>, x86_64, ARMv7, and ARM64 are supported</li>
+          <li>Run server</li>
+        </ol>
+      </div>
     </div>
-  </div>
-  <pre>
-    <code>
-      sudo k3s server &
-      # Kubeconfig is written to /etc/rancher/k3s/k3s.yaml
-      sudo k3s kubectl get node
+    <pre>
+      <code>
+        sudo k3s server &
+        # Kubeconfig is written to /etc/rancher/k3s/k3s.yaml
+        sudo k3s kubectl get node
 
-      # On a different node run the below. NODE_TOKEN comes from /var/lib/rancher/k3s/server/node-token 
-      # on your server
-      sudo k3s agent —server https://myserver:6443 —token ${NODE_TOKEN}
-    </code>
-  </pre>
+        # On a different node run the below. NODE_TOKEN comes from /var/lib/rancher/k3s/server/node-token 
+        # on your server
+        sudo k3s agent —server https://myserver:6443 —token ${NODE_TOKEN}
+      </code>
+    </pre>
+  </div>
 </section>

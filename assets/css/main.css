@@ -137,11 +137,20 @@ ul.underlined {
   .btn > img {
     padding-right: .5rem; }
 
+section {
+  padding: 4rem 0; }
+
+.wrap {
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto; }
+
 .intro {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  align-items: end; }
+  align-items: end;
+  column-gap: 2rem; }
 
 .flex-row {
   box-sizing: border-box;
@@ -152,7 +161,8 @@ ul.underlined {
 
 .half {
   flex-basis: 50%;
-  max-width: 50%; }
+  max-width: 50%;
+  padding: 2rem; }
 
 .grid-row {
   display: grid;
