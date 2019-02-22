@@ -26,19 +26,19 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 125px;
   line-height: 129px;
-} 
+}
 
 h2 {
   font-size: 90px;
   line-height: 94px;
-} 
+}
 
 h3 {
   font-size: 30px;
   line-height: 34px;
   font-weight: lighter;
   letter-spacing: .5px;
-} 
+}
 
 small {
   font-size: .5em;
@@ -74,7 +74,7 @@ nav.main-nav {
   align-items: center;
   justify-content: space-between;
   padding: .75rem 1.5rem;
-  
+
   .logo {
     height: 50px;
     width: 161px;
@@ -250,7 +250,7 @@ section {
 
   * {
     color: $light;
-  } 
+  }
 }
 
 .box {
@@ -294,19 +294,19 @@ section {
   h1 {
     font-size: 90px;
     line-height: 94px;
-  } 
+  }
 
   h2 {
     font-size: 30px;
     line-height: 34px;
-  } 
+  }
 
   h3 {
     font-size: 24px;
     line-height: 28px;
     font-weight: lighter;
     letter-spacing: .5px;
-  } 
+  }
 
   .container {
     display: grid;
@@ -333,6 +333,14 @@ section {
     align-items: start;
     padding: 2rem;
     background-color: lighten($primary-color, 80%);
+
+    & > ul ul {
+      display: none
+    }
+
+    li.parent > ul {
+      display: block;
+    }
 
     ul {
       list-style-type: none;
@@ -391,46 +399,42 @@ section {
 }
 
 
-
 //responsive
-  @media (max-width: 768px) {
-    .container {
-      grid-template-areas:
-        "header"
-        "nav"
-        "content"
-        "side"
-        "footer";
+@media (max-width: 768px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "nav"
+      "content"
+      "side"
+      "footer";
 
-      grid-template-columns: 1fr;
-      grid-template-rows:
-        auto /* Header */
-        minmax(75px, auto) /* side Nav */
-        1fr /* Content */
-        minmax(75px, auto) /* toc */
-        auto; /* Footer */
-    }
-
-    .half {
-      flex-basis: 100%;
-      max-width: 100%;
-    }
-
-    .spacer {
-      padding: 2rem;
-    }
-
-    .black-content, .white-content {
-      max-width: 100%;
-    }
-    
-    .intro,
-    .grid-row,
-    .black-white {
-      grid-template-columns: 1fr;
-    }
-
+    grid-template-columns: 1fr;
+    grid-template-rows:
+      auto /* Header */
+      minmax(75px, auto) /* side Nav */
+      1fr /* Content */
+      minmax(75px, auto) /* toc */
+      auto; /* Footer */
   }
 
+  .half {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
 
-  
+  .spacer {
+    padding: 2rem;
+  }
+
+  .black-content, .white-content {
+    max-width: 100%;
+  }
+
+  .intro,
+  .grid-row,
+  .black-white {
+    grid-template-columns: 1fr;
+  }
+
+}
