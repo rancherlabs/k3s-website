@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
   <head>
+    {{ $cache :=  now.Unix }}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ .Title }} | {{ .Site.Title }}</title>
@@ -8,7 +9,16 @@
     <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
 
     {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link rel="stylesheet" href="{{ $style.Permalink }}?{{ $cache }}">
+
+    {{ $empty := resources.Get "js/empty.js" }}
+    {{ $jquery := resources.Get "js/jquery.js" }}
+    {{ $vendorJs := slice $jquery | resources.Concat "js/vendor.js" }}
+    <script charset="utf-8" type="text/javascript" src="{{ $vendorJs.Permalink }}?{{ $cache }}"></script>
+
+    {{ $main := resources.Get "js/main.js" }}
+    {{ $appJs := slice $main | resources.Concat "js/app.js" }}
+    <script charset="utf-8" type="text/javascript" src="{{ $appJs.Permalink }}?{{ $cache }}"></script>
   </head>
 
   {{- $.Scratch.Set "topLevel" . -}}

@@ -334,12 +334,8 @@ section {
     padding: 2rem;
     background-color: lighten($primary-color, 80%);
 
-    & > ul ul {
+    > ul ul {
       display: none
-    }
-
-    li.parent > ul {
-      display: block;
     }
 
     ul {
@@ -348,6 +344,22 @@ section {
       margin: 0;
 
       li {
+        cursor: pointer;
+
+        &.open {
+          > img {
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+          }
+
+          > ul {
+            display: block;
+          }
+        }
+
         a {
           font-size: 14px;
           font-weight: bold;
