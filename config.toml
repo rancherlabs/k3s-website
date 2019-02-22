@@ -1,7 +1,36 @@
-baseURL = "http://example.org/"
+baseURL = ""
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "k3s"
 theme = "xmin"
+pluralizeListTitles = false
+enableRobotsTXT = true
+pygmentsCodeFences = true
+pygmentsCodeFencesGuessSyntax = true
+enableGitInfo = true
+
+[blackfriday]
+fractions = false
+#hrefTargetBlank = true
+
+[outputFormats.Algolia]
+baseName = "algolia"
+isPlaintext = true
+mediaType = "application/json"
+notAlternative = true
+
+[params.algolia]
+vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
+params = ["categories", "tags"]
+
+[outputs]
+home = ["HTML", "RSS", "Algolia"]
+
+
+[privacy]
+  [privacy.twitter]
+    disable = false
+    enableDNT = false
+    simple = true
 
 [menu]
 
