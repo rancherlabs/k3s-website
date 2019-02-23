@@ -1,7 +1,6 @@
 ---
 title: "b2"
 date: 2019-02-05T09:52:46-07:00
-draft: true
 ---
 
 ## Tunc fluit primae abdita aequor
