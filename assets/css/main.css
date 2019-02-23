@@ -18,7 +18,8 @@ h1 {
 
 h2 {
   font-size: 90px;
-  line-height: 94px; }
+  line-height: 94px;
+  margin-bottom: 2rem; }
 
 h3 {
   font-size: 30px;
@@ -87,6 +88,8 @@ code {
   color: lime; }
 
 pre code {
+  display: block;
+  overflow-x: auto;
   background: none; }
 
 /* elements */
@@ -151,13 +154,6 @@ section {
   align-items: center;
   align-items: end;
   column-gap: 2rem; }
-
-.flex-row {
-  box-sizing: border-box;
-  display: flex;
-  flex: 0 1 auto;
-  flex-direction: row;
-  flex-wrap: wrap; }
 
 .half {
   flex-basis: 50%;
@@ -272,6 +268,9 @@ section {
     grid-template-rows: auto minmax(75px, auto) 1fr minmax(75px, auto) auto;
     /* Footer */ }
 
+  section {
+    padding: 2em 0; }
+
   .half {
     flex-basis: 100%;
     max-width: 100%; }
@@ -280,11 +279,30 @@ section {
     padding: 2rem; }
 
   .black-content, .white-content {
-    max-width: 100%; }
+    max-width: 100%;
+    padding: 1em; }
+
+  .bg-light {
+    padding: 20px; }
 
   .intro,
   .grid-row,
   .black-white {
-    grid-template-columns: 1fr; } }
+    display: block; }
+
+  .intro > div {
+    padding: 2em; }
+  .intro h1 {
+    font-size: 60px;
+    line-height: 64px; }
+
+  .grid-row {
+    padding: 0 2em; }
+    .grid-row .box {
+      margin: 1em 0; }
+
+  h2 {
+    font-size: 72px;
+    line-height: 76px; } }
 
 /*# sourceMappingURL=main.css.map */
