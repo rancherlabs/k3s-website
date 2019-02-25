@@ -32,7 +32,7 @@ h2 {
   font-size: 90px;
   line-height: 94px;
   margin-bottom: 2rem;
-} 
+}
 
 h3 {
   font-size: 30px;
@@ -449,7 +449,7 @@ section {
       max-width: 100%;
       padding: 1em;
     }
-    
+
     .bg-light {
       padding: 20px;
     }
@@ -459,7 +459,7 @@ section {
     .black-white {
       display: block;
     }
-    
+
     .intro {
       > div {
         padding: 2em;
@@ -483,12 +483,10 @@ section {
       font-size: 72px;
       line-height: 76px;
     }
-  }
 
-  .intro,
-  .grid-row,
-  .black-white {
-    grid-template-columns: 1fr;
+    .intro,
+    .grid-row,
+    .black-white {
+      grid-template-columns: 1fr;
+    }
   }
-
-}
