@@ -106,8 +106,19 @@ nav.main-nav {
   font-size: 1.1em;
 }
 
-footer a {
-  text-decoration: none;
+footer.bg-primary {
+  p {
+    margin: 0;
+    padding: .5rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  small {
+    color: #BFBFBF;
+  }
 }
 
 hr {
@@ -201,7 +212,7 @@ ul.underlined {
 
 //layout
 section {
-  padding: 4rem 0;
+  padding: 6rem 0;
 }
 
 .wrap {
@@ -475,7 +486,7 @@ section {
     }
 
     section {
-      padding: 2em 0;
+      padding: 2em;
     }
 
     .bg-primary {
@@ -518,7 +529,7 @@ section {
 
     .intro {
       > div {
-        padding: 2em;
+        padding-bottom: 2em;
       }
 
       h1 {
@@ -545,6 +556,18 @@ section {
     .grid-three,
     .black-white {
       grid-template-columns: 1fr;
+    }
+
+    .grid-two {
+      grid-row-gap: 0;
+    }
+
+    .grid-four {
+      grid-template-columns: repeat(2, 1fr);
+
+      .yellow-dot {
+        font-size: 1em;
+      }
     }
 
     .hidden-small {
