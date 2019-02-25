@@ -45,10 +45,10 @@ draft: true
   <div class="text-center">
     <h2>Why use k3s?</h2>
   </div>
-  <div class="grid-row">
+  <div class="grid-three">
     <div class="box">
       <h4>Optimized for ARM</h4>
-      <p>Both ARM64 and ARMv7 are supported with binaries and multiarch images available for both. k3s works great from something as small as a Raspberry Pi or as large as a AWS a1.4xlarge 32GiB server.</p>
+      <p>Both ARM64 and ARMv7 are supported with binaries and multiarch images available for both. k3s works great from something as small as a Raspberry Pi or as large as an AWS a1.4xlarge 32GiB server.</p>
     </div>
     <div class="box">
       <h4>Simplified Operations</h4>
@@ -56,24 +56,27 @@ draft: true
     </div>
     <div class="box">
       <h4>Perfect for Edge</h4>
-      <p>K3s is designed for production workloads in unattended, resource-constrained, remote locations or inside IoT appliances.</p>
+      <p>K3s is a <a href="https://www.cncf.io/certification/software-conformance/">Certified Kubernetes distribution</a> designed for production workloads in unattended, resource-constrained, remote locations or inside IoT appliances.</p>
     </div>
   </div>
 </div>
 </section>
 
 <section>
-  <div class="flex-row  wrap">
-  <div class="half">
+  <div class="grid-two  wrap">
+  <div>
     <h2>What is this?</h2>
     <h3>k3s is a fully compliant production-grade Kubernetes distribution with the following changes:</h3>
-      <p>Legacy, alpha, non-default features are removed. Hopefully you shouldn’t notice the stuff that has been removed.</p>
-      <p>Removed most in-tree plugins (cloud providers and storage plugins) which can be replaced with out of tree addons.</p>
-      <p>Add sqlite3 as the default storage mechanism. etcd3 is still available, but not the default.</p>
-      <p>Wrapped in simple launcher that handles a lot of the complexity of TLS and options.</p>   
+    <ul>
+      <img src="/img/certified-kubernetes.png" width="100" align="right">
+      <li>Legacy, alpha, non-default features are removed. Hopefully, you shouldn’t notice the stuff that has been removed.</li>
+      <li>Removed most in-tree plugins (cloud providers and storage plugins) which can be replaced without of tree add-ons.</li>
+      <li>Add sqlite3 as the default storage mechanism. etcd3 is still available, but not the default.</li>
+      <li>Wrapped in a simple launcher that handles a lot of the complexity of TLS and options.</li>
+    </ul>   
   </div>
 
-  <div class="half">
+  <div>
     <div class="box">
       <h4>No OS dependencies</h4>
       <p>(just a sane kernel and cgroup mounts needed). k3s packages required dependencies</p>
@@ -123,13 +126,13 @@ draft: true
 
 <section class="bg-light">
   <div class="wrap">
-    <div class="text-center">
-      <h2>Quick Start</h2>
+    <div>
+      <h2 class="text-center">Quick Start</h2>
       <div>
-        <ol>
-          <li>Download k3s from <a href="https://github.com/rancher/k3s/releases/latest">latest release</a>, x86_64, ARMv7, and ARM64 are supported</li>
-          <li>Run server</li>
-        </ol>
+        <ul class="underlined" style="width: 80%; margin: 0 auto;">
+          <li>1. Download k3s - <a href="https://github.com/rancher/k3s/releases/latest">latest release</a>, x86_64, ARMv7, and ARM64 are supported</li>
+          <li>2. Run server</li>
+        </ul>
       </div>
     </div>
     <pre>

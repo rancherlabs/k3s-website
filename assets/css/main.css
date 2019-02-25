@@ -55,7 +55,7 @@ nav.main-nav {
   justify-content: space-between;
   padding: .75rem 1.5rem; }
   nav.main-nav .logo {
-    height: 50px;
+    height: 74px;
     width: 161px; }
   nav.main-nav .menu {
     text-align: center; }
@@ -160,7 +160,12 @@ section {
   max-width: 50%;
   padding: 2rem; }
 
-.grid-row {
+.grid-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem; }
+
+.grid-three {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem; }
