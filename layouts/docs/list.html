@@ -1,8 +1,6 @@
-<div class="container">
-  <header>
-    {{ partial "header.html" . }}
-  </header>
+{{ partial "header.html" . }}
 
+<div class="container">
   <nav class="tree-nav">
     {{ partial "tree.html" . }}
   </nav>
@@ -14,7 +12,6 @@
 
     {{ .Content }}
 
-    {{ partial "footer.html" . }}
   </main>
 
   <aside>
@@ -24,3 +21,5 @@
     </div>
   </aside>
 </div>
+
+{{ partial "footer.html" . }}

@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 125px;
   line-height: 129px;
-} 
+}
 
 h2 {
   font-size: 90px;
@@ -39,7 +39,7 @@ h3 {
   line-height: 34px;
   font-weight: lighter;
   letter-spacing: .5px;
-} 
+}
 
 small {
   font-size: .5em;
@@ -75,7 +75,7 @@ nav.main-nav {
   align-items: center;
   justify-content: space-between;
   padding: .75rem 1.5rem;
-  
+
   .logo {
     height: 74px;
     width: 161px;
@@ -251,7 +251,7 @@ section {
 
   * {
     color: $light;
-  } 
+  }
 }
 
 .box {
@@ -295,19 +295,19 @@ section {
   h1 {
     font-size: 90px;
     line-height: 94px;
-  } 
+  }
 
   h2 {
     font-size: 30px;
     line-height: 34px;
-  } 
+  }
 
   h3 {
     font-size: 24px;
     line-height: 28px;
     font-weight: lighter;
     letter-spacing: .5px;
-  } 
+  }
 
   .container {
     display: grid;
@@ -335,12 +335,32 @@ section {
     padding: 2rem;
     background-color: lighten($primary-color, 80%);
 
+    > ul ul {
+      display: none
+    }
+
     ul {
       list-style-type: none;
       padding: 0;
       margin: 0;
 
       li {
+        cursor: pointer;
+
+        &.open {
+          > img {
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+          }
+
+          > ul {
+            display: block;
+          }
+        }
+
         a {
           font-size: 14px;
           font-weight: bold;
@@ -392,7 +412,6 @@ section {
 }
 
 
-
 //responsive
   @media (max-width: 768px) {
     .container {
@@ -421,9 +440,10 @@ section {
       max-width: 100%;
     }
 
-    .spacer {
-      padding: 2rem;
-    }
+  .half {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
 
     .black-content, .white-content {
       max-width: 100%;
@@ -465,5 +485,10 @@ section {
     }
   }
 
+  .intro,
+  .grid-row,
+  .black-white {
+    grid-template-columns: 1fr;
+  }
 
-  
+}
