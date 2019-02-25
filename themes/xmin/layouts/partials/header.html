@@ -19,6 +19,7 @@
     {{ $main := resources.Get "js/main.js" }}
     {{ $appJs := slice $main | resources.Concat "js/app.js" }}
     <script charset="utf-8" type="text/javascript" src="{{ $appJs.Permalink }}?{{ $cache }}"></script>
+
   </head>
 
   {{- $.Scratch.Set "topLevel" . -}}
@@ -32,13 +33,22 @@
 
   <body class="{{ replaceRE "/.*" "" ($.Scratch.Get "topLevel").Dir }}">
     <header>
+      <div class="bg-primary">
+        <div class="flex-between wrap">
+          <a href="https://rancher.com/" target="blank"><img src="/img/rancher-labs-logo.svg" style="height: 20px; width: 184px;"></a>
+          <p class="hidden-small">See what else <a href="https://rancher.com/" target="blank">Rancher</a> is up to</p>
+        </div>
+      </div>
+
       <nav class="main-nav">
-        <a href="/" class="logo"><img src="/img/logo.svg"></a>
-        <ul class="menu">
-          {{ range .Site.Menus.main }}
-          <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
-          {{ end }}
-          <li><a href="" class="btn"><img src="/img/icon-github.svg"><span>Github</span></a></li>
-        </ul>
+        <div class="flex-between wrap">
+          <a href="/" class="logo"><img src="/img/logo.svg"></a>
+          <ul class="menu">
+            {{ range .Site.Menus.main }}
+            <li><a href="{{ .URL | relURL }}" class="btn no-bg">{{ .Name }}</a></li>
+            {{ end }}
+            <li><a href="https://github.com/rancher/k3s" class="btn"><img src="/img/icon-github.svg"><span>Github</span></a></li>
+          </ul>
+        </div>
       </nav>
     </header>
