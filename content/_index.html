@@ -1,13 +1,13 @@
 ---
-title: "k3s - small but mighty"
+title: "k3s - Lightweight Kubernetes"
 date: 2019-02-05T09:52:46-07:00
 ---
 
 <section>
   <div class="wrap intro">
   <div>
-    <h1>Lightweight Kubernetes</h1>
-    <h3>Easy to install, half the memory, all in a <span class="highlight">binary less than 40mb.</span></h3>
+    <h1>: Lightweight Kubernetes</h1>
+    <h3>Easy to install <span class="highlight">40 MB binary</span> that runs in less than <span class="highlight">512 MB of RAM.</span></h3>
   </div>
 
   <div class="bg-light">
@@ -30,7 +30,7 @@ date: 2019-02-05T09:52:46-07:00
          <li>IoT</li>
          <li>CI</li>
          <li>ARM</li>
-         <p><small>and Situations where a PhD in k8s clusterology is infeasible</small></p>
+         <p><small>and situations where a PhD in k8s clusterology is infeasible</small></p>
       </ul>
     </div>
   </div>
@@ -90,23 +90,22 @@ date: 2019-02-05T09:52:46-07:00
     <h3>k3s is a fully compliant production-grade Kubernetes distribution with the following changes:</h3>
     <ul>
       <img src="/img/certified-kubernetes.png" width="100" align="right">
-      <li>Legacy, alpha, non-default features are removed. Hopefully, you shouldn’t notice the stuff that has been removed.</li>
-      <li>Removed most in-tree plugins (cloud providers and storage plugins) which can be replaced without of tree add-ons.</li>
-      <li>Add sqlite3 as the default storage mechanism. etcd3 is still available, but not the default.</li>
+      <li>Legacy, alpha, non-default features are removed. Many of these features are not available in most Kubernetes clusters already.</li>
+      <li>Removed in-tree plugins (cloud providers and storage plugins) which can be replaced without of tree add-ons.</li>
+      <li>Added sqlite3 as the default storage mechanism. etcd3 is still available, but not the default.</li>
       <li>Wrapped in a simple launcher that handles a lot of the complexity of TLS and options.</li>
     </ul>
   </div>
 
   <div>
     <div class="box">
-      <h4>No OS dependencies</h4>
-      <p>(just a sane kernel and cgroup mounts needed). k3s packages required dependencies</p>
+      <h4>Minimum System Requirements</h4>
       <ul class="underlined">
-       <li>containerd</li>
-       <li>Flannel</li>
-       <li>CoreDNS</li>
-       <li>CNI</li>
-       <li>Host utilites (socat, iptables, etc)</li>
+       <li>Linux 3.10+</li>
+       <li>512 MB of ram per server</li>
+       <li>75 MB of ram per node</li>
+       <li>200 MB of disk space</li>
+       <li>x86_64, ARMv7, ARM64</li>
       </ul>
     </div>
   </div>
@@ -134,7 +133,7 @@ date: 2019-02-05T09:52:46-07:00
        <li>SQLite3 support in addition to etcd</li>
        <li>TLS management</li>
        <li>Automatic Manifest and Helm Chart management</li>
-       <li>containerd</li>
+       <li>containerd, CoreDNS, Flannel</li>
     </ul>
     </div>
   </div>
