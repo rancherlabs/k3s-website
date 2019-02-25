@@ -37,5 +37,5 @@ home = ["HTML", "RSS", "Algolia"]
   [[menu.main]]
     identifier = "docs"
     name = "Docs"
-    url = "/docs/"
+    url = "https://github.com/rancher/k3s/blob/master/README.md"
     weight = -110
