@@ -74,8 +74,13 @@ nav.main-nav {
 .title {
   font-size: 1.1em; }
 
-footer a {
+footer.bg-primary p {
+  margin: 0;
+  padding: .5rem; }
+footer.bg-primary a {
   text-decoration: none; }
+footer.bg-primary small {
+  color: #BFBFBF; }
 
 hr {
   border: 0.5px solid #edeff0; }
@@ -148,7 +153,7 @@ ul.underlined {
     background: transparent; }
 
 section {
-  padding: 4rem 0; }
+  padding: 6rem 0; }
 
 .wrap {
   box-sizing: border-box;
@@ -307,7 +312,7 @@ section {
     /* Footer */ }
 
   section {
-    padding: 2em 0; }
+    padding: 2em; }
 
   .bg-primary .flex-between {
     display: block;
@@ -336,7 +341,7 @@ section {
     display: block; }
 
   .intro > div {
-    padding: 2em; }
+    padding-bottom: 2em; }
   .intro h1 {
     font-size: 44px;
     line-height: 48px; }
@@ -355,6 +360,14 @@ section {
   .grid-three,
   .black-white {
     grid-template-columns: 1fr; }
+
+  .grid-two {
+    grid-row-gap: 0; }
+
+  .grid-four {
+    grid-template-columns: repeat(2, 1fr); }
+    .grid-four .yellow-dot {
+      font-size: 1em; }
 
   .hidden-small {
     display: none; } }
