@@ -1,5 +1,5 @@
 ---
-title: "k3s - 5 less than k8s"
+title: "k3s - Lightweight Kubernetes"
 date: 2019-02-05T09:52:46-07:00
 name: "menu"
 ---
@@ -7,11 +7,12 @@ name: "menu"
 Lightweight Kubernetes.  Easy to install, half the memory, all in a binary less than 40mb.
 
 Great for
-* Edge
-* IoT
-* CI
-* ARM
-* Situations where a PhD in k8s clusterology is infeasible
+
+  - Edge
+  - IoT
+  - CI
+  - ARM
+  - Situations where a PhD in k8s clusterology is infeasible
 
 What is this?
 ---
