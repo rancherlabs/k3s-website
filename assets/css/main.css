@@ -144,7 +144,7 @@ ul.underlined {
   line-height: 0;
   color: #1F2326;
   font-weight: bold;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   height: 35px; }
   .btn > img {
