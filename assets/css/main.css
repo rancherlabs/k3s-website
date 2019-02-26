@@ -95,13 +95,7 @@ pre {
   border-radius: 5px;
   padding: 1em;
   overflow-x: auto;
-  background-color: #1F2326;
-  /*scroll*/
-  background-color: #f6f8fa;
-  border-radius: 3px;
-  font-size: 85%;
-  line-height: 1.45;
-  padding: 16px; }
+  background-color: #1F2326; }
   pre::-webkit-scrollbar {
     display: none; }
 

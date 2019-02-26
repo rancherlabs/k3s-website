@@ -138,13 +138,6 @@ pre {
   overflow-x: auto;
   background-color: $primary-color;
 
-  /*scroll*/
-  background-color: #f6f8fa;
-  border-radius: 3px;
-  font-size: 85%;
-  line-height: 1.45;
-  padding: 16px;
-
    &::-webkit-scrollbar {
      display: none;
    }
