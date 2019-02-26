@@ -1,63 +1,50 @@
 ---
-title: "k3s - small but mighty"
+title: "k3s - 5 less than k8s"
 date: 2019-02-05T09:52:46-07:00
+name: "menu"
 ---
 
-## Tunc fluit primae abdita aequor
+Lightweight Kubernetes.  Easy to install, half the memory, all in a binary less than 40mb.
 
-Lorem markdownum, iura **est** Amyclis telum! Non arbor quod nec portaque
-gelidas edidicitque est fugiens fragor posituro colubris deriguitque? Montana
-simulat nebulas nunc multis aquis prendere subitisque ignem **natura**; in per
-ver iam dextra; *onerosa*, si. Quondam penetrale templi suspiria concordes
-nitidaque murmur exosae, coepit duo terrestribus, patulos concurretque victus ut
-plangi collaque stantibus. Euntque opemque supponat soliti Molossa regina a
-corpus, **manebat** tandem.
+Great for
+* Edge
+* IoT
+* CI
+* ARM
+* Situations where a PhD in k8s clusterology is infeasible
 
-1. A perdidit
-2. Dixit tibi spem
-3. Cana sequentia thalamis dum Issen pietas est
+What is this?
+---
 
-## Ducit Learchum contorto corde piscosa pacis
+k3s is intended to be a fully compliant Kubernetes distribution with the following changes:
 
-Pallas tibi quoque regna, quae adspicit, verba moles venit cumque trementi Delos
-pectoraque Glaucus deos armis sed non. Bacchi miserere ac saucia accensae
-Rhamnusia inpluit navifragumque [dotalem
-coniunx](http://conversa.org/desiluit.html) cognomine moenia.
+1. Legacy, alpha, non-default features are removed. Hopefully you shouldn't notice the
+   stuff that has been removed.
+2. Removed most in-tree plugins (cloud providers and storage plugins) which can be replaced
+   with out of tree addons.
+3. Add sqlite3 as the default storage mechanism. etcd3 is still available, but not the default.
+4. Wrapped in simple launcher that handles a lot of the complexity of TLS and options.
+5. Minimal to no OS dependencies (just a sane kernel and cgroup mounts needed). k3s packages required
+   dependencies
+    * containerd
+    * Flannel
+    * CoreDNS
+    * CNI
+    * Host utilities (iptables, socat, etc)
 
-## De movere cum manus vestra
+Quick Start
+-----------
+1. Download `k3s` from latest [release](https://github.com/rancher/k3s/releases/latest), x86_64, armhf, and arm64 are
+   supported
+2. Run server 
 
-Adsiluit tuta fauces legebantur petit tellus, exsangues est quod mihi offensa
-perosae. Inde disiecta simul. Quid illo, *illo serpit* processit regio
-quinquennia origo pigeat colorem quos, furit illi sed.
+```bash
+sudo k3s server &
+# Kubeconfig is written to /etc/rancher/k3s/k3s.yaml
+sudo k3s kubectl get node
 
-## Pericula humanae
+# On a different node run the below. NODE_TOKEN comes from /var/lib/rancher/k3s/server/node-token 
+# on your server
+sudo k3s agent --server https://myserver:6443 --token ${NODE_TOKEN}
 
-Magno se reverentia: pars sensum tutaque ausam est de. Cuperet Caenis quam
-Nixique verba Gorgenque ambo.
-
-Ne his tamen, ad nomen comites [versant sparsas](http://www.iam.io/sunt.php)
-meritis excedere usus, similis. Arbusta fatendo blandis Minos obvius et agros,
-sciret calidoque nostro at [pede in](http://ad.org/urbemlumina.aspx).
-
-## Oscula per est Phoebo horrent nuda tempora
-
-Temptat toto ego templa cumulum inter, furtim mihi. Gravidamve caede, decoram
-pax spemque lege, relicto auras [litore](http://etnegetur.com/) sic [Minos quod
-superest](http://passis-nisi.net/) ne novem nescio. Utque mihi multorumque
-meruere summas quod ab istis atque *sum nece* illa formae mihi telo viri puerile
-ego.
-
-- Regia ponto
-- Ad opus alia laeta ingenti repulsam
-- Deum vimina unam genae mentemque terrae lacertis
-- Aures foliis speculabar arma
-- Fameque capitis peremptis quem multa manus tamen
-- Muro vultus Cerealia puellae est inornatos aequore
-
-Monstra iussit sine sidera vitamque frequens tempora est ignotis eget matura
-volenti fuerat. Frustra percepit in ille alit. Caeneus simul ramos oculos. Illis
-quamvis latius ante in [respiramen
-orbem](http://suis.org/pudoris-cassiope.html), illa quod manu et docendam
-*aquarum iamque* relictis me quae. *Terque facta vita* mihi dixit genus
-[exiguas](http://ad-lino.com/periuria.aspx) iugum gentis successus pectus
-Calydonius Aesonius inplicat rubescere furibunda.
+```
