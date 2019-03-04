@@ -9,10 +9,7 @@
     {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}?{{ $cache }}">
 
-    {{ $empty := resources.Get "js/empty.js" }}
-    {{ $jquery := resources.Get "js/jquery.js" }}
-    {{ $vendorJs := slice $jquery | resources.Concat "js/vendor.js" }}
-    <script charset="utf-8" type="text/javascript" src="{{ $vendorJs.Permalink }}?{{ $cache }}"></script>
+
 
     {{ $main := resources.Get "js/main.js" }}
     {{ $appJs := slice $main | resources.Concat "js/app.js" }}
@@ -47,6 +44,12 @@
   <meta property="og:image" content="/thumbnail.jpg">
   <meta property="og:image" content="{{ if .Params.image }}{{ . }}{{ else }}{{.Site.BaseURL}}/img/logo-square.png{{ end }}" />
   <meta property="og:url" content="{{.Site.BaseURL}}" />
+
+  {{ $empty := resources.Get "js/empty.js" }}
+  {{ $jquery := resources.Get "js/jquery.js" }}
+  {{ $buttons := resources.Get "js/buttons.js" }}
+  {{ $vendorJs := slice $jquery $empty $buttons | resources.Concat "js/vendor.js" }}
+  <script charset="utf-8" type="text/javascript" src="{{ $vendorJs.Permalink }}?{{ $cache }}"></script>
 
 
   </head>
