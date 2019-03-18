@@ -157,12 +157,13 @@ section {
 
 .wrap {
   box-sizing: border-box;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto; }
 
 .intro {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 2fr 1fr;
   align-items: center;
   align-items: end;
   column-gap: 2rem; }
