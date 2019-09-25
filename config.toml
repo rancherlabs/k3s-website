@@ -1,7 +1,7 @@
 baseURL = ""
 languageCode = "en-us"
 title = "k3s"
-theme = "xmin"
+theme = "projects-theme"
 pluralizeListTitles = false
 enableRobotsTXT = true
 pygmentsCodeFences = true

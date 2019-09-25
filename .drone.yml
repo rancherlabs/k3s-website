@@ -54,6 +54,34 @@ steps:
 
 ---
 kind: pipeline
+name: staging
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: publish-staging
+  pull: default
+  image: plugins/docker
+  settings:
+    context: .
+    dockerfile: Dockerfile.staging
+    group: publish
+    repo: rancherlabs/k3s-website
+    tag: staging
+    password:
+      from_secret: docker_password
+    username:
+      from_secret: docker_username
+  when:
+    branch:
+    - staging
+    event:
+    - push
+
+---
+kind: pipeline
 name: production
 
 platform:
