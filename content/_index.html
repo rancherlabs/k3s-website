@@ -1,166 +1,103 @@
 ---
-title: "k3s - Lightweight Kubernetes"
+title: "K3s: Kightweight Kubernetes"
 date: 2019-02-05T09:52:46-07:00
 ---
 
+<section class="intro">
+    <div class="bg-primary">
+      <div class="wrap grid-two">
+        <div>
+          <h1>Lightweight Kubernetes</h1>
+          <h4>Easy to install. A binary of less than 40 MB. Only 512 MB of RAM required to run.
+          </h4>
+          <!-- <hr>
+          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>          <a href="https://info.rancher.com/meetup-introducing-submariner-multicluster-networking" class="btn" target="_blank" rel="noopener">Sign Up</a> -->
+        </div>
+  
+        <!-- <div class="video-responsive">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+        </div> -->
+        <div>
+          <h4>This won't take long…</h4>
+  <pre><code>
+  curl -sfL https://get.k3s.io | sh -
+  # Check for Ready node, 
+  takes maybe 30 seconds
+  k3s kubectl get node
+  </code></pre>
+          <p>For detailed installation, <a href="https://github.com/rancher/k3s/blob/master/README.md">refer to the docs</a></p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="folder">
+      <h4>Great For</h4>
+      <div class="bg-light grid-dynamic text-center">
+        <h5>Edge</h5>
+        <h5>IoT</h5>
+        <h5>CI</h5>
+        <h5>ARM</h5>
+      </div>
+    </div>
+  </section>
+
 <section class="wrap">
-  <div class="intro">
-    <div>
-      <!-- stars -->
-      <a class="github-button" href="https://github.com/rancher/k3s" data-icon="octicon-star" data-show-count="true" aria-label="Star rancher/k3s on GitHub">Star</a>
-
-      <!-- forks -->
-      <a class="github-button" href="https://github.com/rancher/k3s/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork rancher/k3s on GitHub">Fork</a>
-
-      <h1>Lightweight Kubernetes</h1>
-      <h3>Easy to install. A binary of less than <span class="highlight">40 MB</span>. Only <span class="highlight">512 MB of RAM</span> required to run.</h3>
-      <hr/>
-      <p><strong>Watch our recorded k3s demo on-demand, and get a copy of our slides here</strong></p>
-      <a class="btn" href="https://info.rancher.com/meetup-k3s-lightweight-kubernetes" target="_blank">Watch Demo</a>
-      <p><strong>Join the upcoming Introduction to k3s Online Training</strong></p>
-      <a class="btn" href="https://info.rancher.com/k3s-online-training" target="_blank">Register for Training</a>
-    </div>
-
-    <div class="bg-light">
-      <h4>This shouldn’t take long…</h4>
-      <pre><code>
-      curl -sfL https://get.k3s.io | sh -
-      # Check for Ready node, takes maybe 30 seconds
-      k3s kubectl get node
-      </code></pre>
-      <p>For detailed installation, <a href="https://github.com/rancher/k3s/blob/master/README.md">refer to the docs</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="bg-primary text-center">
-  <div class="wrap">
-    <div class="grid-two">
-      <div><h2>Great For</h2></div>
-      <div class="grid-four">
-        <div class="yellow-dot">
-          <!-- <img src="/img/pointer.svg" height="25"> --> Edge
-        </div>
-        <div class="yellow-dot">
-          <!-- <img src="/img/pointer.svg" height="25"> --> IoT
-        </div>
-        <div class="yellow-dot">
-          <!-- <img src="/img/pointer.svg" height="25"> --> CI
-        </div>
-        <div class="yellow-dot">
-          <!-- <img src="/img/pointer.svg" height="25"> --> ARM
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-  <div class="text-center">
-    <h2>Why use k3s?</h2>
-  </div>
+  <h2>Why Use k3s</h2>
   <div class="grid-three">
-    <div class="box">
-      <h4>Optimized for ARM</h4>
-      <p>Both ARM64 and ARMv7 are supported with binaries and multiarch images available for both. k3s works great from something as small as a Raspberry Pi or as large as an AWS a1.4xlarge 32GiB server.</p>
-    </div>
-    <div class="box">
-      <h4>Simplified Operations</h4>
-      <p>k3s is wrapped in a simple package that reduces the dependencies and steps needed to run a production Kubernetes cluster. Packaged as a single binary, k3s makes installation and upgrade as simple as copying a file. TLS certificates are automatically generated to ensure that all communication is secure by default.</p>
-    </div>
-    <div class="box">
-      <h4>Perfect for Edge</h4>
-      <p>K3s is a <a href="https://www.cncf.io/certification/software-conformance/">Certified Kubernetes distribution</a> designed for production workloads in unattended, resource-constrained, remote locations or inside IoT appliances.</p>
-    </div>
-  </div>
-</div>
-</section>
-
-<section class="bg-light">
-  <div class="grid-two wrap">
-  <div>
-    <h2>What is this?</h2>
-    <h3>k3s is a fully compliant production-grade Kubernetes distribution with the following changes:</h3>
-    <ul>
-      <img src="/img/certified-kubernetes.png" width="100" align="right">
-      <li>Legacy, alpha, non-default features are removed. Many of these features are not available in most Kubernetes clusters already.</li>
-      <li>Removed in-tree plugins (cloud providers and storage plugins) which can be replaced with out-of-tree add-ons.</li>
-      <li>Added sqlite3 as the default storage mechanism. etcd3 is still available, but not the default.</li>
-      <li>Wrapped in a simple launcher that handles a lot of the complexity of TLS and options.</li>
-    </ul>
-  </div>
-
-  <div>
-    <div class="box">
-      <h4>Minimum System Requirements</h4>
-      <ul class="underlined">
-       <li>Linux 3.10+</li>
-       <li>512 MB of ram per server</li>
-       <li>75 MB of ram per node</li>
-       <li>200 MB of disk space</li>
-       <li>x86_64, ARMv7, ARM64</li>
-      </ul>
-    </div>
-  </div>
-</div>
-</section>
-
-<section class="black-white" style="padding: 0;">
-  <div class="black">
-    <div class="black-content">
-    <h2>Removes</h2>
-    <ul class="underlined">
-       <li>Legacy and non-default features</li>
-       <li>Alpha features</li>
-       <li>In-tree cloud providers</li>
-       <li>In-tree storage drivers</li>
-       <li>Docker (optional)</li>
-    </ul>
-    </div>
-  </div>
-  <div class="white">
-    <div class="white-content">
-    <h2>Adds</h2>
-    <ul class="underlined">
-       <li>Simplified installation</li>
-       <li>SQLite3 support in addition to etcd</li>
-       <li>TLS management</li>
-       <li>Automatic Manifest and Helm Chart management</li>
-       <li>containerd, CoreDNS, Flannel</li>
-    </ul>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-  <h2 class="text-center">How it Works</h2>
-  <img src="/img/how-it-works.svg">
-</div>
-</section>
-
-<section class="bg-light">
-  <div class="wrap">
-    <div>
-      <h2 class="text-center">Quick Start</h2>
       <div>
-        <ul class="underlined" style="width: 80%; margin: 0 auto;">
-          <li>1. Download k3s - <a href="https://github.com/rancher/k3s/releases/latest">latest release</a>, x86_64, ARMv7, and ARM64 are supported</li>
-          <li>2. Run server</li>
-        </ul>
+        <h5>Optimized for ARM</h5>
+        <p>Both ARM64 and ARMv7 are supported with binaries and multiarch images available for both. k3s works great from something as small as a Raspberry Pi or as large as an AWS a1.4xlarge 32GiB server.</p>
+      </div>
+  
+      <div>
+        <h5>Simplified Operations</h5>
+        <p>k3s is wrapped in a simple package that reduces the dependencies and steps needed to run a production Kubernetes cluster. Packaged as a single binary, k3s makes installation and upgrade as simple as copying a file. TLS certificates are automatically generated to ensure that all communication is secure by default.</p>
+      </div>
+
+      <div>
+        <h5>Perfect for Edge</h5>
+        <p>K3s is a <a href="https://www.cncf.io/certification/software-conformance/" target="blank">Certified Kubernetes</a> distribution designed for production workloads in unattended, resource-constrained, remote locations or inside IoT appliances.</p>
       </div>
     </div>
-    <pre>
-      <code>
-        sudo k3s server &
-        # Kubeconfig is written to /etc/rancher/k3s/k3s.yaml
-        sudo k3s kubectl get node
+</section>
+<hr/>
+<section class="wrap">
+  <h2>How it Works</h2>
+  <img src="../images/how-it-works-k3s.svg" alt="{{ .Site.Title }}">
+</section>
 
-        # On a different node run the below. NODE_TOKEN comes from /var/lib/rancher/k3s/server/node-token
-        # on your server
-        sudo k3s agent --server https://myserver:6443 --token ${NODE_TOKEN}
-      </code>
-    </pre>
+<section class="get-started">
+  <div class="white text-center">
+    <h2>Get Started</h2>
+      <h5>1. Download k3s - <a href="https://github.com/rancher/k3s/releases/latest">latest release</a>, x86_64, ARMv7, and ARM64 are supported</h5>
+      <h5>2. Run server</h5>
+      <pre>      
+        <code>
+          sudo k3s server &amp;
+          # Kubeconfig is written to /etc/rancher/k3s/k3s.yaml
+          sudo k3s kubectl get node
+  
+          # On a different node run the below. NODE_TOKEN comes from /var/lib/rancher/k3s/server/node-token
+          # on your server
+          sudo k3s agent --server https://myserver:6443 --token ${NODE_TOKEN}
+        </code>
+      </pre>
+  </div>
+  <div class="bg-primary">
+    <div class="wrap">
+        <h2>Learn More</h2>
+        <div class="grid-two">
+            <div>
+              <p>Watch our recorded k3s demo on-demand, and get a copy of our slides here</p>
+              <a href="https://info.rancher.com/meetup-k3s-lightweight-kubernetes" class="btn" target="_blank">Watch Demo</a>
+            </div>
+            <div>
+              <p>Join the upcoming Introduction to k3s Online Training
+                  Register for Training</p>
+              <a href="https://info.rancher.com/k3s-online-training" target="_blank" class="btn">Register for Training</a>
+            </div>
+          </div>
+    </div>
   </div>
 </section>
+  

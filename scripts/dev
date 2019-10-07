@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-PORT=9002
+PORT=9004
 IMAGE=rancherlabs/k3s-website
 TAG=dev
 THEME=
@@ -29,6 +29,7 @@ Usage:
 -d      - Build the dev image instead of pulling from the registry
 -p PORT - Port to listen on
 -s      - Skip pulling build/dev images
+-t DIR  - Use DIR to for the theme, to devlop the theme at the same time
 -u      - Upload/push the build image after building
 
 EOF
@@ -45,7 +46,7 @@ absolute() {
 }
 
 
-while getopts ":bdp:su" opt;do
+while getopts ":bdp:st:u" opt;do
   case $opt in
   b)
     BUILD_BUILD="true"
@@ -59,6 +60,9 @@ while getopts ":bdp:su" opt;do
     ;;
   s)
     SKIP_PULL="true"
+    ;;
+  t)
+    THEME="${OPTARG}"
     ;;
   u)
     UPLOAD="true"
@@ -75,6 +79,13 @@ while getopts ":bdp:su" opt;do
     ;;
   esac
 done
+
+THEMEVOLUME=""
+if [[ "$THEME" ]]; then
+  echo "Using theme from ${THEME}"
+  ABSOLUTE=$(absolute $THEME)
+  THEMEVOLUME="-v ${ABSOLUTE}:/run/themes/projects-theme"
+fi
 
 if [[ "$BUILD_BUILD" ]]; then
   echo "Building ${IMAGE}:build"
@@ -109,7 +120,6 @@ docker run --rm -p ${PORT}:${PORT} -it \
   -v $(pwd)/layouts:/run/layouts \
   -v $(pwd)/scripts:/run/scripts \
   -v $(pwd)/static:/run/static \
-  -v $(pwd)/themes:/run/themes \
   -v $(pwd)/.git:/run/.git \
   -v $(pwd)/config.toml:/run/config.toml \
-  ${IMAGE}:${TAG} --port=${PORT}
+  ${THEMEVOLUME} ${IMAGE}:${TAG} --port=${PORT}
