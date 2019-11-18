@@ -8,8 +8,7 @@ date: 2019-02-05T09:52:46-07:00
       <div class="wrap grid-two">
         <div>
           <h1>Lightweight Kubernetes</h1>
-          <h4>Quick to download. Easy to install. Runs Kubernetes in only 512MB of RAM.
-          </h4>
+          <h4>The certified Kubernetes distribution built for IoT & Edge computing</h4>
           <!-- <hr>
           <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>          <a href="https://info.rancher.com/meetup-introducing-submariner-multicluster-networking" class="btn" target="_blank" rel="noopener">Sign Up</a> -->
         </div>
@@ -45,42 +44,59 @@ date: 2019-02-05T09:52:46-07:00
   <h2>Why Use k3s</h2>
   <div class="grid-three">
       <div>
-        <h5>Optimized for ARM</h5>
-        <p>Both ARM64 and ARMv7 are supported with binaries and multiarch images available for both. k3s works great from something as small as a Raspberry Pi or as large as an AWS a1.4xlarge 32GiB server.</p>
-      </div>
-  
-      <div>
-        <h5>Simplified Operations</h5>
-        <p>k3s is wrapped in a simple package that reduces the dependencies and steps needed to run a production Kubernetes cluster. Packaged as a single binary, k3s makes installation and upgrade as simple as copying a file. TLS certificates are automatically generated to ensure that all communication is secure by default.</p>
-      </div>
+        <h5>Perfect for Edge</h5>
+        <p>K3S is a highly available, certified
+        Kubernetes distribution designed
+        for production workloads in
+        unattended, resource-constrained,
+        remote locations or inside
+        IoT appliances.</p>
+        </div>
 
       <div>
-        <h5>Perfect for Edge</h5>
-        <p>K3s is a <a href="https://www.cncf.io/certification/software-conformance/" target="blank">Certified Kubernetes</a> distribution designed for production workloads in unattended, resource-constrained, remote locations or inside IoT appliances.</p>
-      </div>
+        <h5>Simplified & Secure</h5>
+        <p>K3S is packaged as a single
+        &lt;40MB binary that reduces the
+        dependencies and steps needed
+        to install, run and auto-update a
+        production Kubernetes cluster.</p>
+        </div>
+
+      <div>
+        <h5>Optimized for ARM</h5>
+        <p>Both ARM64 and ARMv7 are
+        supported with binaries and
+        multiarch images available for
+        both. K3S works great from
+        something as small as a
+        Raspberry Pi to an AWS
+        a1.4xlarge 32GiB server.</p>
+        </div>
     </div>
 </section>
 <hr/>
 <section class="wrap">
   <h2>How it Works</h2>
-  <img src="../images/how-it-works-k3s.svg" alt="{{ .Site.Title }}">
+  <img src="../images/how-it-works-k3s-dark.svg" alt="{{ .Site.Title }}">
 </section>
 
 <section class="get-started">
-  <div class="white text-center">
-    <h2>Get Started</h2>
-      <h5>1. Download k3s - <a href="https://github.com/rancher/k3s/releases/latest">latest release</a>, x86_64, ARMv7, and ARM64 are supported</h5>
-      <h5>2. Run server</h5>
+  <div class="white">
+    <h2 class="text-center">Get Started</h2>
+      <h5>
+        1. Download k3s - <a href="https://github.com/rancher/k3s/releases/latest">latest release</a>, x86_64, ARMv7, and ARM64 are supported</br>
+        2. Run server
+      </h5>
       <pre>      
-        <code>
-          sudo k3s server &amp;
-          # Kubeconfig is written to /etc/rancher/k3s/k3s.yaml
-          sudo k3s kubectl get node
-  
-          # On a different node run the below. NODE_TOKEN comes from /var/lib/rancher/k3s/server/node-token
-          # on your server
-          sudo k3s agent --server https://myserver:6443 --token ${NODE_TOKEN}
-        </code>
+<code>
+sudo k3s server &amp;
+# Kubeconfig is written to /etc/rancher/k3s/k3s.yaml
+sudo k3s kubectl get node
+
+# On a different node run the below. NODE_TOKEN comes from /var/lib/rancher/k3s/server/node-token
+# on your server
+sudo k3s agent --server https://myserver:6443 --token ${NODE_TOKEN}
+</code>
       </pre>
   </div>
   <div class="bg-primary">
