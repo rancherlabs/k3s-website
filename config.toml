@@ -24,6 +24,8 @@ params = ["categories", "tags"]
 
 [params]
   github = "https://github.com/rancher/k3s/blob/master/README.md"
+  gtm_id  = "GTM-T3CCX93"
+  gtm_datalayer = "basic"
 
 [outputs]
 home = ["HTML", "RSS", "Algolia"]
