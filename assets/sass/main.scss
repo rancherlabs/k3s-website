@@ -7,6 +7,13 @@
     --light           : #F3F3F3;
   }
 
+  .navbar-brand {
+    flex: 1;
+  }
+
+  .sub-header span {
+    padding: 0.5rem;
+  }
 
   .cncf {
     .cncf-logo {
